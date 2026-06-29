@@ -14,13 +14,20 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormState({ name: '', email: '', message: '' });
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    
+    // Format message for WhatsApp
+    const whatsappNumber = '2348165988801';
+    const text = `Hello Chidinma, my name is ${formState.name} (${formState.email}).\n\n${formState.message}`;
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+
+    setIsSubmitting(false);
+    setIsSuccess(true);
+    setFormState({ name: '', email: '', message: '' });
+    setTimeout(() => setIsSuccess(false), 5000);
   };
 
   const handleChange = (e) => {
@@ -62,7 +69,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold mb-1">Email</h4>
-                <p className="text-slate-400">hello@justina.com</p>
+                <a href="mailto:chidinmanwosu380@gmail.com" className="text-slate-400 hover:text-emerald-400 transition-colors">chidinmanwosu380@gmail.com</a>
               </div>
             </div>
 
@@ -72,7 +79,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold mb-1">Phone</h4>
-                <p className="text-slate-400">+1 (555) 123-4567</p>
+                <p className="text-slate-400">+234 816 598 8801</p>
               </div>
             </div>
 
@@ -82,7 +89,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-white font-bold mb-1">Location</h4>
-                <p className="text-slate-400">San Francisco, CA<br/>Available Worldwide</p>
+                <p className="text-slate-400">FCT Abuja, Nigeria</p>
               </div>
             </div>
           </motion.div>
