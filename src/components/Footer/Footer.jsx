@@ -1,16 +1,18 @@
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="py-8 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-center relative z-10">
-      <div className="container mx-auto px-6">
-        <a href="#home" className="text-2xl font-heading font-bold text-gradient inline-block mb-4">
-          CJN.
-        </a>
-        <p className="text-slate-500 dark:text-slate-400 text-sm font-body">
-          Designed with ❤️ for Chidinma Justina Nwosu
+    <footer className="py-8 border-t border-white/5 bg-slate-950">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-slate-500 text-sm">
+          &copy; {currentYear} Chidinma Justina Nwosu. All rights reserved.
         </p>
-        <p className="text-slate-400 dark:text-slate-500 text-xs mt-2">
-          &copy; {new Date().getFullYear()} All Rights Reserved.
-        </p>
+        
+        <div className="flex items-center gap-6">
+          <a href="#" className="text-slate-400 hover:text-white transition-colors">GitHub</a>
+          <a href="#" className="text-slate-400 hover:text-white transition-colors">LinkedIn</a>
+          <a href="#" className="text-slate-400 hover:text-white transition-colors">Twitter</a>
+        </div>
       </div>
     </footer>
   );

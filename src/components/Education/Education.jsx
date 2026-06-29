@@ -1,57 +1,54 @@
 import { motion } from 'framer-motion';
-import { educationData } from '../../data/education';
-import { GraduationCap } from 'lucide-react';
+
+const educationData = [
+  {
+    degree: "B.Sc. Mass Communication (In View)",
+    institution: "National Open University of Nigeria, Abuja"
+  },
+  {
+    degree: "National Diploma (ND), Mass Communication",
+    institution: "Dorben Polytechnic, Abuja"
+  },
+  {
+    degree: "Senior Secondary School Certificate (NECO)",
+    institution: "Redemption High School, Nasarawa State"
+  },
+  {
+    degree: "First School Leaving Certificate",
+    institution: "Golf Course Primary School, Aba, Abia State"
+  }
+];
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 bg-primary/5 dark:bg-slate-800/30 relative">
-      <div className="container mx-auto px-6 md:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-sm font-bold uppercase tracking-widest text-secondary mb-2">Academic Background</h2>
-          <h3 className="text-4xl md:text-5xl font-heading font-bold text-slate-800 dark:text-white">
-            Education <span className="text-gradient">Journey</span>
-          </h3>
-        </motion.div>
+    <section id="education" className="py-24 relative bg-slate-950">
+      <div className="max-w-4xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              My <span className="text-emerald-400">Education</span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 mb-8 rounded-full mx-auto"></div>
+          </motion.div>
+        </div>
 
-        <div className="max-w-4xl mx-auto relative">
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-transparent transform md:-translate-x-1/2"></div>
-
+        <div className="grid gap-6">
           {educationData.map((edu, index) => (
             <motion.div
-              key={edu.id}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative flex flex-col md:flex-row items-center mb-16 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
+              transition={{ delay: index * 0.1 }}
+              className="bg-slate-900/40 p-6 md:p-8 rounded-2xl border border-white/5 hover:border-emerald-500/50 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4"
             >
-              <div className="absolute left-6 md:left-1/2 w-12 h-12 rounded-full bg-white dark:bg-slate-800 border-4 border-primary flex items-center justify-center transform -translate-x-1/2 z-10 text-primary shadow-lg">
-                <GraduationCap size={20} />
-              </div>
-
-              <div className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pl-12 text-left' : 'md:pr-12 md:text-right text-left'} w-full`}>
-                <div className="glass-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
-                  <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold uppercase tracking-wider mb-4">
-                    {edu.date}
-                  </span>
-                  <h4 className="text-2xl font-heading font-bold text-slate-800 dark:text-white mb-2">
-                    {edu.degree}
-                  </h4>
-                  <h5 className="text-lg font-medium text-primary mb-4">
-                    {edu.school}
-                  </h5>
-                  <p className="text-slate-600 dark:text-slate-400 font-body">
-                    {edu.description}
-                  </p>
-                </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-2">{edu.degree}</h3>
+                <p className="text-emerald-400">{edu.institution}</p>
               </div>
             </motion.div>
           ))}

@@ -1,73 +1,76 @@
 import { motion } from 'framer-motion';
-import { 
-  Briefcase, 
-  Scissors, 
-  Headphones, 
-  PenTool, 
-  Palette, 
-  LayoutTemplate, 
-  Laptop, 
-  Building2, 
-  CalendarCheck, 
-  FileText, 
-  Boxes
-} from 'lucide-react';
+import { Palette, Briefcase, Users, LayoutDashboard, Target, CalendarDays } from 'lucide-react';
 
-const servicesData = [
-  { id: 1, title: "Administrative Assistance", description: "Providing comprehensive support to executives, managing schedules, and organizing daily operations.", Icon: Briefcase },
-  { id: 2, title: "Salon Management", description: "Overseeing daily salon activities, staff management, and ensuring a premium customer experience.", Icon: Scissors },
-  { id: 3, title: "Customer Service", description: "Delivering exceptional support, resolving issues efficiently, and building strong client relationships.", Icon: Headphones },
-  { id: 4, title: "Graphic Design", description: "Creating visually appealing designs for marketing, social media, and brand communication.", Icon: PenTool },
-  { id: 5, title: "Brand Identity", description: "Developing cohesive visual identities that resonate with your target audience.", Icon: Palette },
-  { id: 6, title: "UI Design", description: "Designing intuitive and engaging user interfaces for web and mobile applications using Figma.", Icon: LayoutTemplate },
-  { id: 7, title: "Virtual Assistance", description: "Offering remote administrative support, email management, and document preparation.", Icon: Laptop },
-  { id: 8, title: "Office Administration", description: "Streamlining office processes, maintaining records, and ensuring smooth internal communications.", Icon: Building2 },
-  { id: 9, title: "Scheduling", description: "Efficiently managing calendars, booking appointments, and coordinating events.", Icon: CalendarCheck },
-  { id: 10, title: "Documentation", description: "Preparing, editing, and managing professional documents, reports, and presentations.", Icon: FileText },
-  { id: 11, title: "Inventory Management", description: "Tracking supplies, placing orders, and maintaining optimal stock levels for business operations.", Icon: Boxes },
+const services = [
+  {
+    title: "Operations Management",
+    description: "End-to-end management of business operations, staff supervision, scheduling, and workflow efficiency.",
+    icon: <LayoutDashboard className="w-8 h-8 text-purple-400" />
+  },
+  {
+    title: "Graphic & UI/UX Design",
+    description: "Designing engaging social media graphics, branding materials, logos, and UI/UX wireframes using Canva & Figma.",
+    icon: <Palette className="w-8 h-8 text-pink-400" />
+  },
+  {
+    title: "Administrative Support",
+    description: "Expert calendar management, office administration, procurement, logistics, and confidential record keeping.",
+    icon: <Briefcase className="w-8 h-8 text-blue-400" />
+  },
+  {
+    title: "Customer Service",
+    description: "Professional client complaint resolution, maintaining high customer satisfaction and improving retention.",
+    icon: <Users className="w-8 h-8 text-emerald-400" />
+  },
+  {
+    title: "Financial Tracking",
+    description: "Daily financial records maintenance, cash transaction processing, and stock control for businesses.",
+    icon: <Target className="w-8 h-8 text-yellow-400" />
+  },
+  {
+    title: "Event & Appointment Coordination",
+    description: "Organizing schedules, coordinating meetings, and handling daily business correspondences.",
+    icon: <CalendarDays className="w-8 h-8 text-cyan-400" />
+  }
 ];
 
 const Services = () => {
   return (
     <section id="services" className="py-24 relative">
-      <div className="container mx-auto px-6 md:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-sm font-bold uppercase tracking-widest text-secondary mb-2">What I Do</h2>
-          <h3 className="text-4xl md:text-5xl font-heading font-bold text-slate-800 dark:text-white">
-            Professional <span className="text-gradient">Services</span>
-          </h3>
-        </motion.div>
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Core <span className="text-blue-400">Competencies</span>
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-500 mb-8 rounded-full mx-auto"></div>
+            <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+              Providing top-tier operational, administrative, and design services to help businesses thrive.
+            </p>
+          </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {servicesData.map((service, index) => {
-            const IconComp = service.Icon;
-            return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="glass-card p-8 rounded-2xl group hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 border-t-4 border-t-transparent hover:border-t-primary"
-              >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white text-primary transition-colors duration-300">
-                  <IconComp size={28} />
-                </div>
-                <h4 className="text-xl font-heading font-bold text-slate-800 dark:text-white mb-3">
-                  {service.title}
-                </h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-body">
-                  {service.description}
-                </p>
-              </motion.div>
-            );
-          })}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="bg-slate-900/40 p-8 rounded-2xl border border-white/5 hover:border-purple-500/50 hover:bg-slate-800/60 transition-all group"
+            >
+              <div className="mb-6 p-4 bg-slate-950 rounded-xl inline-block group-hover:scale-110 transition-transform">
+                {service.icon}
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+              <p className="text-slate-400 leading-relaxed text-sm">{service.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
