@@ -59,7 +59,7 @@ const Skills = () => {
   });
 
   return (
-    <section id="skills" className="py-24 bg-white dark:bg-slate-900 relative">
+    <section id="skills" className="py-24 relative">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

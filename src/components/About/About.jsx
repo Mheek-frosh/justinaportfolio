@@ -3,21 +3,28 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { Target, Lightbulb, Compass, Award } from 'lucide-react';
 
+const pillars = [
+  { Icon: Target, title: 'Mission', desc: 'To provide exceptional support and design solutions that drive business success.' },
+  { Icon: Lightbulb, title: 'Vision', desc: 'To continually innovate and elevate the standards of professional services.' },
+  { Icon: Compass, title: 'Objective', desc: 'To leverage my diverse skillset in a dynamic environment.' },
+  { Icon: Award, title: 'Values', desc: 'Integrity, Creativity, Reliability, and Excellence.' },
+];
+
+const stats = [
+  { value: 5, suffix: '+', label: 'Years Experience' },
+  { value: 100, suffix: '%', label: 'Commitment' },
+  { value: 50, suffix: '+', label: 'Completed Projects' },
+  { value: 100, suffix: '%', label: 'Client Satisfaction' },
+];
+
 const About = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
 
-  const stats = [
-    { value: 5, suffix: '+', label: 'Years Experience' },
-    { value: 100, suffix: '%', label: 'Commitment' },
-    { value: 50, suffix: '+', label: 'Completed Projects' },
-    { value: 100, suffix: '%', label: 'Client Satisfaction' },
-  ];
-
   return (
-    <section id="about" className="py-24 bg-white dark:bg-slate-900 relative">
+    <section id="about" className="py-24 relative">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -57,18 +64,16 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
-            {[
-              { icon: Target, title: 'Mission', desc: 'To provide exceptional support and design solutions that drive business success.' },
-              { icon: Lightbulb, title: 'Vision', desc: 'To continually innovate and elevate the standards of professional services.' },
-              { icon: Compass, title: 'Objective', desc: 'To leverage my diverse skillset in a dynamic environment.' },
-              { icon: Award, title: 'Values', desc: 'Integrity, Creativity, Reliability, and Excellence.' },
-            ].map((item, i) => (
-              <div key={i} className="glass-card p-6 rounded-2xl group hover:-translate-y-2 transition-transform duration-300">
-                <item.icon className="w-8 h-8 text-primary mb-4 group-hover:text-secondary transition-colors" />
-                <h4 className="text-xl font-heading font-semibold text-slate-800 dark:text-white mb-2">{item.title}</h4>
-                <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
-              </div>
-            ))}
+            {pillars.map((item, i) => {
+              const IconComp = item.Icon;
+              return (
+                <div key={i} className="glass-card p-6 rounded-2xl group hover:-translate-y-2 transition-transform duration-300">
+                  <IconComp className="w-8 h-8 text-primary mb-4 group-hover:text-secondary transition-colors" />
+                  <h4 className="text-xl font-heading font-semibold text-slate-800 dark:text-white mb-2">{item.title}</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
+                </div>
+              );
+            })}
           </motion.div>
         </div>
 

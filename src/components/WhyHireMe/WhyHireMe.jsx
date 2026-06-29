@@ -14,7 +14,7 @@ const traits = [
 
 const WhyHireMe = () => {
   return (
-    <section className="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-x-1/2 -translate-y-1/2"></div>
       

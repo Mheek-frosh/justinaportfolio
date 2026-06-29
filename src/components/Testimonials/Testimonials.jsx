@@ -31,7 +31,7 @@ const testimonialsData = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-800/50 relative overflow-hidden">
+    <section className="py-24 bg-primary/5 dark:bg-slate-800/30 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
