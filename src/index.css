@@ -76,23 +76,7 @@
   background: #EC4899;
 }
 
-/* Lenis Smooth Scroll */
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
+/* Native Smooth Scroll */
+html {
+  scroll-behavior: smooth;
 }

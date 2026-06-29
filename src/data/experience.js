@@ -1,4 +1,4 @@
-import { Briefcase, Image, PenTool, Scissors, Headphones } from "lucide-react";
+import { Briefcase, PenTool, Scissors, Headphones } from "lucide-react";
 
 export const experienceData = [
   {

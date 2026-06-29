@@ -75,7 +75,7 @@ const Hero = () => {
             <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden glass-card p-3">
               <div className="w-full h-full rounded-2xl overflow-hidden relative">
                 <img 
-                  src="/src/assets/images/hero.png" 
+                  src="/image.png" 
                   alt="Chidinma Justina Nwosu" 
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Lenis from '@studio-freight/lenis';
 import Loader from './components/Loader/Loader';
 import Cursor from './components/Cursor/Cursor';
 import Navbar from './components/Navbar/Navbar';
@@ -21,24 +20,11 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2500);
 
     return () => {
-      lenis.destroy();
       clearTimeout(timer);
     };
   }, []);
