@@ -35,23 +35,23 @@ const About = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-4 pt-12">
-              <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 aspect-square flex flex-col justify-end">
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="space-y-4 pt-0 md:pt-12">
+              <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 sm:aspect-square flex flex-col justify-end">
                 <h4 className="font-bold text-xl mb-1">Operations</h4>
                 <p className="text-sm text-slate-400">Team Leadership, Inventory, Workflow</p>
               </div>
-              <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 aspect-square flex flex-col justify-end">
+              <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 sm:aspect-square flex flex-col justify-end">
                 <h4 className="font-bold text-xl mb-1">Administration</h4>
                 <p className="text-sm text-slate-400">Executive Support, Scheduling, Records</p>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 aspect-square flex flex-col justify-end">
+              <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 sm:aspect-square flex flex-col justify-end">
                 <h4 className="font-bold text-xl mb-1">Graphic Design</h4>
                 <p className="text-sm text-slate-400">Canva, Figma, Branding</p>
               </div>
-              <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 aspect-square flex flex-col justify-end">
+              <div className="bg-slate-900/50 p-6 rounded-2xl border border-white/5 sm:aspect-square flex flex-col justify-end">
                 <h4 className="font-bold text-xl mb-1">Customer Service</h4>
                 <p className="text-sm text-slate-400">Complaint Resolution, Sales</p>
               </div>
